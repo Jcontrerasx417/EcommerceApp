@@ -22,8 +22,11 @@ fun LoginScreen() {
         Column(
             modifier = Modifier
                 .padding(innerPadding)
-                .fillMaxSize(),
-            horizontalAlignment = Alignment.CenterHorizontally
+                .fillMaxSize()
+                .padding(horizontal = 32.dp),
+
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.Center
         ) {
             Image(
                 painter = painterResource(R.drawable.logo_unab),
@@ -58,6 +61,44 @@ fun LoginScreen() {
                 },
                 shape = RoundedCornerShape(12.dp)
             )
+            Spacer(modifier = Modifier.height(32.dp))
+
+            OutlinedTextField(
+                value = "",
+                onValueChange = {},
+                modifier = Modifier.fillMaxWidth(),
+                leadingIcon = {
+                    Icon(
+                        imageVector = Icons.Default.Email,
+                        contentDescription = "Email",
+                        tint = Color(0xFFFF9900)
+                    )
+                },
+                label = {
+                    Text(text = "Contraseña")
+                },
+                shape = RoundedCornerShape(12.dp)
+            )
+            Spacer(modifier = Modifier.height(24.dp))
+
+            Button(onClick = {}, modifier = Modifier.fillMaxWidth()
+                .height(50.dp),
+                shape = RoundedCornerShape(12.dp),
+                colors = ButtonDefaults.buttonColors(
+                    containerColor = Color(0xFFFF9900)
+                )
+
+            ) {
+                Text("Iniciar sesion ")
+            }
+            Spacer(modifier = Modifier.height(24.dp))
+
+            TextButton(onClick = {}) {
+                Text(
+                    text = "¿No tienes una cuenta? Registrate",
+                    color = Color(0xFFFF9900)
+                )
+            }
         }
     }
 }
