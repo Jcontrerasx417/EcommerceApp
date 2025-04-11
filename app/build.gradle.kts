@@ -59,4 +59,8 @@ dependencies {
 
     //Esta es la libreria de navegacion
     implementation(libs.androidx.navigation.compose)
+
+    //Esta es la libreria para cargar imagenes de internet
+    implementation(libs.coil.compose)
+    implementation(libs.coil.network.okhttp)
 }
